@@ -25,7 +25,7 @@ local ExampleService = {
 function ExampleService.Networker.Server.Message(player, message)
 	print(player.Name .. " sent message to server:", message)
 
-	return "message received by server"
+	return "Server response"
 end
 
 -- Sending a message by calling the client function from the server.
@@ -73,7 +73,7 @@ local ExampleServiceClient = {
 -- Client function that the server can call.
 function ExampleServiceClient.Networker.Client.Message(message)
 	print("Message received from server:", message)
-	return "Responding from the client!"
+	return "Client response"
 end
 
 -- Sending a message by calling the server function from the client.

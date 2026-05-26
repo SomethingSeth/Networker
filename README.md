@@ -15,14 +15,14 @@ Networker uses evaera's [Promise](https://github.com/evaera/roblox-lua-promise/t
 ```luau
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
-local Networker = require(ReplicatedStorage.Shared.Networker)
+local ServerNetworker = require(ReplicatedStorage.Shared.Networker)
 
 local ExampleService = {
-	Networker = Networker.new("ExampleService")
+	Networker = ServerNetworker.new("ExampleService")
 }
 
 -- Server exposes this function to the client; client can call it. 
-function ExampleNetworker.Server.Message(player, message)
+function ExampleService.Networker.Server.Message(player, message)
 	print(player.Name .. " sent message to server:", message)
 
 	return "message received by server"
@@ -30,7 +30,7 @@ end
 
 -- Sending a message by calling the client function from the server.
 function ExampleService.SendMessage(player)
-	ExampleNetworker.Client.Message(player, "Hello from the server!") 
+	ExampleService.Networker.Client.Message(player, "Hello from the server!") 
 		:andThen(function(response)
 			print("Client response:", response)
 		end)
@@ -62,12 +62,12 @@ return ExampleService
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local Networker = require(ReplicatedStorage.Shared.Networker)
+local ClientNetworker = require(ReplicatedStorage.Shared.Networker)
 
 local player = Players.LocalPlayer
 
 local ExampleServiceClient = {
-	Networker = Networker.new("ExampleService")
+	Networker = ClientNetworker.new("ExampleService")
 }
 
 -- Client function that the server can call.

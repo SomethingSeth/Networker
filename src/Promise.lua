@@ -1,1 +1,1 @@
-return require(script.Parent:FirstFirstChild("Promise")) or require(script.Parent.Parent:FirstFirstChild("Promise"))
+return require(script.Parent:FindFirstChild("Promise")) or require(script.Parent.Parent:FindFirstChild("Promise"))

@@ -1,0 +1,14 @@
+[package]
+name = "somethingseth/networker"
+description = "Remote wrapper using service-styled function calls"
+version = "1.0.0"
+license = "MIT"
+authors = ["SomethingSeth <dc: smthseth>"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+exclude = ["**"]
+include = ["src", "src/*", "default.project.json", "wally.lock", "wally.toml", "LICENSE"]
+
+[dependencies]
+Promise = "evaera/promise@4.0.0"

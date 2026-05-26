@@ -4,7 +4,7 @@
 ]=]
 
 local Config = require(script.Parent.Config)
-local Promise = require(script.Parent.Promise).Get()
+local Promise = require(script.Parent.Promise)
 
 type FunctionMap = {
 	[string]: (...any) -> ...any,

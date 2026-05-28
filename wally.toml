@@ -1,7 +1,7 @@
 [package]
 name = "somethingseth/networker"
 description = "Remote wrapper using service-styled function calls"
-version = "1.5.0"
+version = "1.6.0"
 license = "MIT"
 authors = ["SomethingSeth <dc: smthseth>"]
 registry = "https://github.com/UpliftGames/wally-index"
